@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your personal voice assistant</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: rgb(221 222 234);
+        }
+
+        #container {
+            background-color: white;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0px 8px 16px -7px;
+            width: 45vw;
+            text-align: center;
+            border-radius: 12px;
+            height: 351px;
+        }
+
+        #myassitant {
+            position: fixed;
+            top: 16.5%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+
+        .outer-div {
+            margin: 8px auto;
+            height: 300px;
+            width: 300px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(45deg, rgb(254, 139, 142), rgb(194, 155, 244), rgb(251, 168, 74));
+        }
+
+        .outer-div img {
+            height: 94%;
+            width: 94%;
+            margin: auto;
+            border-radius: 50%;
+            background: white;
+        }
+
+        #buttons {
+            margin: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .btn {
+            width: 30%;
+            text-decoration: none;
+            border: 1px solid;
+            padding: 4px 12px;
+            border-radius: 4px;
+
+        }
+
+        .record {
+            border: 2px solid rgb(167, 120, 234);
+            color: rgb(167, 120, 234);
+            /* background: rgb(167,120,234); */
+            /* color: white; */
+        }
+
+        .record:hover {
+            background: rgb(167, 120, 234);
+            color: white;
+
+        }
+
+    </style>
+</head>
+
+<body>`
+    <div id="myassitant"><img src="/static/assistant.png"></div>
+    <div id="container">
+        <div class="outer-div"><img src="/static/mic-removebg-preview.png"></div>
+        <div id="buttons"> 
+            <a href="/record" class="btn record">Speak</a>
+        </div>
+    </div>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+<script>
+i = 0
+    setInterval(function () {
+        $(".outer-div").css({
+            background: `linear-gradient( ${i}deg, rgb(254, 139, 142), rgb(194, 155, 244), rgb(251, 168, 74))`
+        })
+        i = i + 10
+        if (i > 360) {
+            i = 0
+        }
+    }, 50)</script>
+
+</html>
